@@ -1,4 +1,4 @@
-package ir.smartpath.Authentication.Service;
+package ir.smartpath.authenticationservice;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

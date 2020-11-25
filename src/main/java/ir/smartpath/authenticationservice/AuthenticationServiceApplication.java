@@ -1,4 +1,4 @@
-package ir.smartpath.Authentication.Service;
+package ir.smartpath.authenticationservice;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

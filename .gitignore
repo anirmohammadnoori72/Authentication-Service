@@ -69,6 +69,8 @@ crashlytics.properties
 crashlytics-build.properties
 fabric.properties
 
+.idea/sonarIssues.xml
+Authentication-Service.iml
 # Editor-based Rest Client
 .idea/httpRequests
 

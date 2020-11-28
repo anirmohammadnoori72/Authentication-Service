@@ -1,16 +1,15 @@
 package ir.smartpath.authenticationservice.fibo;
 
-import com.github.benmanes.caffeine.cache.Cache;
 import com.github.benmanes.caffeine.cache.Caffeine;
 import com.github.benmanes.caffeine.cache.LoadingCache;
-import io.swagger.models.auth.In;
 import ir.smartpath.authenticationservice.configuration.Config;
+import org.springframework.stereotype.Service;
+
 
 import java.math.BigInteger;
-import java.security.acl.LastOwnerException;
-import java.util.HashMap;
 import java.util.concurrent.*;
 
+@Service
 public class FiboSequenceBuilder implements IFiboSequenceBuilder {
 
     private ExecutorService executors = Executors.newFixedThreadPool(10);

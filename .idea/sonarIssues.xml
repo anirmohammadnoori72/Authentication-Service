@@ -3,6 +3,11 @@
   <component name="issues">
     <option name="index">
       <map>
+        <entry key="/a.dummy">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/.gitignore">
           <value>
             <set />
@@ -28,6 +33,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/ir/smartpath/authenticationservice/configuration/Config.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/main/java/ir/smartpath/authenticationservice/configuration/SpringFoxConfig.java">
           <value>
             <set />
@@ -39,6 +49,36 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/src/main/java/ir/smartpath/authenticationservice/controllers/Test.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/ir/smartpath/authenticationservice/fibo/CachableFibo.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/ir/smartpath/authenticationservice/fibo/ChableFibo.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/ir/smartpath/authenticationservice/fibo/FiboSequenceBuilder.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/ir/smartpath/authenticationservice/fibo/FiboSequenceContainer.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/ir/smartpath/authenticationservice/fibo/FiboTask.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/ir/smartpath/authenticationservice/fibo/IFiboSequenceBuilder.java">
           <value>
             <set />
           </value>

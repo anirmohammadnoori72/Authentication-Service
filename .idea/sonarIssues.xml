@@ -73,6 +73,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/ir/smartpath/authenticationservice/payload/response/MessageResponse.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/main/java/ir/smartpath/authenticationservice/repository/RoleRepository.java">
           <value>
             <set />

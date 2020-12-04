@@ -17,6 +17,7 @@ import ir.smartpath.authenticationservice.payload.response.MessageResponse;
 import ir.smartpath.authenticationservice.repository.RoleRepository;
 import ir.smartpath.authenticationservice.repository.UserRepository;
 import ir.smartpath.authenticationservice.security.jwt.JwtUtils;
+import ir.smartpath.authenticationservice.security.services.TokenStore;
 import ir.smartpath.authenticationservice.security.services.UserDetailsImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -37,19 +38,22 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/api/auth")
 public class AuthController {
     @Autowired
-    AuthenticationManager authenticationManager;
+    private AuthenticationManager authenticationManager;
 
     @Autowired
-    UserRepository userRepository;
+    private UserRepository userRepository;
 
     @Autowired
-    RoleRepository roleRepository;
+    private RoleRepository roleRepository;
 
     @Autowired
-    PasswordEncoder encoder;
+    private PasswordEncoder encoder;
 
     @Autowired
-    JwtUtils jwtUtils;
+    private JwtUtils jwtUtils;
+
+    @Autowired
+    private TokenStore tokenStore;
 
 
     @PostMapping("/signin")
@@ -67,6 +71,7 @@ public class AuthController {
                 .map(item -> item.getAuthority())
                 .collect(Collectors.toList());
 
+        tokenStore.store(jwt);
         return ResponseEntity.ok(new JwtResponse(jwt,
                 userDetails.getId(),
                 userDetails.getUsername(),

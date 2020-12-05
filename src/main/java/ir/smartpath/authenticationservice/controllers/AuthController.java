@@ -11,6 +11,7 @@ import ir.smartpath.authenticationservice.models.ERole;
 import ir.smartpath.authenticationservice.models.Role;
 import ir.smartpath.authenticationservice.models.User;
 import ir.smartpath.authenticationservice.payload.request.LoginRequest;
+import ir.smartpath.authenticationservice.payload.request.LogoutRequest;
 import ir.smartpath.authenticationservice.payload.request.SignupRequest;
 import ir.smartpath.authenticationservice.payload.response.JwtResponse;
 import ir.smartpath.authenticationservice.payload.response.MessageResponse;
@@ -133,4 +134,15 @@ public class AuthController {
 
         return ResponseEntity.ok(new MessageResponse("User registered successfully!"));
     }
+
+    @PostMapping("/logout")
+    public ResponseEntity<?> logout(@Valid @RequestBody LogoutRequest logoutRequest) {
+        if (tokenStore.hasToken(logoutRequest.getToken())) {
+            tokenStore.expireToken(logoutRequest.getToken());
+            return ResponseEntity.ok(new MessageResponse("Successfully to logout user"));
+        }
+
+        return ResponseEntity.ok(new MessageResponse("token not found"));
+    }
+
 }

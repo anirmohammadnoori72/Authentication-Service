@@ -9,16 +9,20 @@ import java.util.concurrent.TimeUnit;
 @Service
 public class TokenStore {
 
-    LoadingCache<String, Long> tokens = Caffeine.newBuilder()
+    LoadingCache<String, Boolean> tokens = Caffeine.newBuilder()
             .expireAfterAccess(24, TimeUnit.HOURS)
-            .build(key -> null);
+            .build(key -> false);
 
 
     public void store(String token) {
-            tokens.put(token,System.currentTimeMillis());
+        tokens.put(token, true);
     }
 
     public boolean hasToken(String token) {
-        return tokens.get(token) != null ;
+        return tokens.get(token) != null && tokens.get(token);
+    }
+
+    public void expireToken(String token) {
+        tokens.put(token, false);
     }
 }

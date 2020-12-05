@@ -48,6 +48,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/ir/smartpath/authenticationservice/controllers/CacheApi.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/main/java/ir/smartpath/authenticationservice/controllers/FiboApi.java">
           <value>
             <set />
@@ -139,6 +144,16 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/src/main/java/ir/smartpath/authenticationservice/payload/request/SignupRequest.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/ir/smartpath/authenticationservice/payload/request/UpdateCacheRequest.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/ir/smartpath/authenticationservice/payload/request/UpdateFiboCacheRequest.java">
           <value>
             <set />
           </value>

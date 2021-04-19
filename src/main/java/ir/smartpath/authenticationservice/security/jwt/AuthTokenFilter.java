@@ -39,15 +39,19 @@ public class AuthTokenFilter extends OncePerRequestFilter {
         try {
             String jwt = parseJwt(request);
             if (jwt != null && jwtUtils.validateJwtToken(jwt)) {
-                String username = jwtUtils.getUserNameFromJwtToken(jwt);
+                long userID = jwtUtils.getUserIDJwtToken(jwt);
 
-                UserDetails userDetails = userDetailsService.loadUserByUsername(username);
+                UserDetails userDetails = userDetailsService.loadUserByUserID(userID);
                 UsernamePasswordAuthenticationToken authentication = new UsernamePasswordAuthenticationToken(
                         userDetails, null, userDetails.getAuthorities());
                 authentication.setDetails(new WebAuthenticationDetailsSource().buildDetails(request));
 
-                SecurityContextHolder.getContext().setAuthentication(authentication);
-                if (!tokenStore.hasToken(jwt)) response.sendError(401,"token is invalid");
+                System.out.println("sssssssssssssssss");
+                //SecurityContextHolder.getContext().setAuthentication(authentication);
+                if (!tokenStore.hasToken(jwt)){response.sendError(401,"token is invalid");
+                    System.out.println("sdfsadfdf");}
+
+                System.out.println("sdfgsdfgsdfg23456546546564");
             }
         } catch (Exception e) {
             logger.error("Cannot set user authentication: {}", e);
